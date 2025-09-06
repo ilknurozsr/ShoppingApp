@@ -8,7 +8,7 @@ export default function App() {
   const [quantity, setQuantity] = useState('');
   const [products, setProducts] = useState([]);
 
-  // AsyncStorage'dan ürünleri yükle
+  
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -30,7 +30,7 @@ export default function App() {
     }
   };
 
-  // Ürün ekleme
+  
   const handleAddProduct = () => {
     if (productName.trim() === '' || price.trim() === '' || quantity.trim() === '') {
       return;
@@ -58,7 +58,7 @@ export default function App() {
     return products.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
 
-  // Tamamlandı toggle
+  
   const toggleCompleted = (id) => {
     const updatedProducts = products.map(item =>
       item.id === id ? { ...item, completed: !item.completed } : item
