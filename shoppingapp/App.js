@@ -21,7 +21,7 @@ export default function App() {
     loadProducts();
   }, []);
 
-  // Ürünleri AsyncStorage'a kaydet
+  
   const saveProducts = async (products) => {
     try {
       await AsyncStorage.setItem('products', JSON.stringify(products));
@@ -53,7 +53,7 @@ export default function App() {
     setQuantity('');
   };
 
-  // Toplam fiyat
+  
   const getTotal = () => {
     return products.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
